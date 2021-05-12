@@ -1,0 +1,846 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>Git使用手册 | X LAB</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="Karl Xing">
+	<meta name="description" content="Git 常用操作记录。">
+
+	
+	<meta name="keywords" content="Git, 版本控制">
+	
+
+	
+	<link rel="shortcut icon" href="../../../../https:/i.loli.net/2017/11/26/5a19c0b50432e.png">
+	<link rel="apple-touch-icon" href="https://i.loli.net/2017/11/26/5a19c0b50432e.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+
+	<meta property="og:site_name" content="X LAB">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Git使用手册 | X LAB">
+	<meta property="og:description" content="Git 常用操作记录。">
+	<meta property="og:url" content="http://yoursite.com">
+
+	
+	<meta property="article:published_time" content="2020-01-20T19:01:00+08:00"> 
+	<meta property="article:author" content="Karl Xing">
+	<meta property="article:published_first" content="X LAB, ">
+	
+
+	
+	
+	
+<link rel="stylesheet" href="../../../../css/allinonecss.min.css">
+
+
+	
+	
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="https://github.com/DeepTrial" target="_blank" rel="noopener" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/p/1005055590700588/home?from=page_100505&mod=TAB#place" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/deeptrial" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    <a class="social-link" title="bilibili" href="https://space.bilibili.com/7441194" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816zm301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72.864 73.92.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856zm-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456zm638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456zm-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952z"/></svg>
+    </a>
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2020-01-20T11:42:28.000Z">
+                    2020-01-20
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="../../../../categories/Github/">Github</a>  
+                
+                
+            </div>
+            <h1 class="post-full-title">Git使用手册</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><table>
+<thead>
+<tr>
+<th align="left">功能</th>
+<th align="left">命令</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">添加文件/更改到暂存区</td>
+<td align="left">git add filename</td>
+</tr>
+<tr>
+<td align="left">添加所有文件/更改到暂存区</td>
+<td align="left">git add .</td>
+</tr>
+<tr>
+<td align="left">提交</td>
+<td align="left">git commit -m msg</td>
+</tr>
+<tr>
+<td align="left">从远程仓库拉取最新代码</td>
+<td align="left">git pull origin master</td>
+</tr>
+<tr>
+<td align="left">推送到远程仓库</td>
+<td align="left">git push origin master</td>
+</tr>
+<tr>
+<td align="left">查看配置信息</td>
+<td align="left">git config –list</td>
+</tr>
+<tr>
+<td align="left">查看文件列表</td>
+<td align="left">git ls-files</td>
+</tr>
+<tr>
+<td align="left">比较工作区和暂存区</td>
+<td align="left">git diff</td>
+</tr>
+<tr>
+<td align="left">比较暂存区和版本库</td>
+<td align="left">git diff –cached</td>
+</tr>
+<tr>
+<td align="left">比较工作区和版本库</td>
+<td align="left">git diff HEAD</td>
+</tr>
+<tr>
+<td align="left">从暂存区移除文件</td>
+<td align="left">git reset HEAD filename</td>
+</tr>
+<tr>
+<td align="left">查看本地远程仓库配置</td>
+<td align="left">git remote -v</td>
+</tr>
+<tr>
+<td align="left">回滚</td>
+<td align="left">git reset –hard 提交SHA</td>
+</tr>
+<tr>
+<td align="left">强制推送到远程仓库</td>
+<td align="left">git push -f origin master</td>
+</tr>
+<tr>
+<td align="left">修改上次 commit</td>
+<td align="left">git commit –amend</td>
+</tr>
+<tr>
+<td align="left">推送 tags 到远程仓库</td>
+<td align="left">git push –tags</td>
+</tr>
+<tr>
+<td align="left">推送单个 tag 到远程仓库</td>
+<td align="left">git push origin [tagname]</td>
+</tr>
+<tr>
+<td align="left">删除远程分支</td>
+<td align="left">git push origin –delete [branchName]</td>
+</tr>
+<tr>
+<td align="left">远程空分支（等同于删除）</td>
+<td align="left">git push origin :[branchName]</td>
+</tr>
+<tr>
+<td align="left">查看所有分支历史</td>
+<td align="left">gitk –all</td>
+</tr>
+<tr>
+<td align="left">按日期排序显示历史</td>
+<td align="left">gitk –date-order</td>
+</tr>
+</tbody></table>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&A"></a>Q&A</h2><h3 id="如何解决gitk中文乱码，git-ls-files-中文文件名乱码问题？"><a href="#如何解决gitk中文乱码，git-ls-files-中文文件名乱码问题？" class="headerlink" title="如何解决gitk中文乱码，git ls-files 中文文件名乱码问题？"></a>如何解决gitk中文乱码，git ls-files 中文文件名乱码问题？</h3><p>在~/.gitconfig中添加如下内容</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">   quotepath = false</span><br><span class="line">[gui]</span><br><span class="line">   encoding = utf-8</span><br><span class="line">[i18n]</span><br><span class="line">   commitencoding = utf-8</span><br><span class="line">[svn]</span><br><span class="line">   pathnameencoding = utf-8</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考 <a href="http://zengrong.net/post/1249.htm" target="_blank" rel="noopener">http://zengrong.net/post/1249.htm</a></p>
+<h3 id="如何处理本地有更改需要从服务器合入新代码的情况？"><a href="#如何处理本地有更改需要从服务器合入新代码的情况？" class="headerlink" title="如何处理本地有更改需要从服务器合入新代码的情况？"></a>如何处理本地有更改需要从服务器合入新代码的情况？</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line">git pull</span><br><span class="line">git stash pop</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="stash"><a href="#stash" class="headerlink" title="stash"></a>stash</h3><p>查看 stash 列表：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash list</span><br></pre></td></tr></tbody></table></figure>
+
+<p>查看某一次 stash 的改动文件列表（不传最后一个参数默认显示最近一次）：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash show stash@{0}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>以 patch 方式显示改动内容</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash show -p stash@{0}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="如何合并-fork-的仓库的上游更新？"><a href="#如何合并-fork-的仓库的上游更新？" class="headerlink" title="如何合并 fork 的仓库的上游更新？"></a>如何合并 fork 的仓库的上游更新？</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add upstream https://upstream-repo-url</span><br><span class="line">git fetch upstream</span><br><span class="line">git merge upstream/master</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="如何通过-TortoiseSVN-带的-TortoiseMerge-exe-处理-git-产生的-conflict？"><a href="#如何通过-TortoiseSVN-带的-TortoiseMerge-exe-处理-git-产生的-conflict？" class="headerlink" title="如何通过 TortoiseSVN 带的 TortoiseMerge.exe 处理 git 产生的 conflict？"></a>如何通过 TortoiseSVN 带的 TortoiseMerge.exe 处理 git 产生的 conflict？</h3><ul>
+<li><p>将 TortoiseMerge.exe 所在路径添加到 <code>path</code> 环境变量。</p>
+</li>
+<li><p>运行命令 <code>git config --global merge.tool tortoisemerge</code> 将 TortoiseMerge.exe 设置为默认的 merge tool。</p>
+</li>
+<li><p>在产生 conflict 的目录运行 <code>git mergetool</code>，TortoiseMerge.exe 会跳出来供你 resolve conflict。</p>
+<blockquote>
+<p>也可以运行 <code>git mergetool -t vimdiff</code> 使用 <code>-t</code> 参数临时指定一个想要使用的 merge tool。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？"><a href="#不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？" class="headerlink" title="不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？"></a>不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？</h3><p><code>git rm --cached /path/to/file</code>，然后正常 add 和 commit 即可。</p>
+<h3 id="如何不建立一个没有-parent-的-branch？"><a href="#如何不建立一个没有-parent-的-branch？" class="headerlink" title="如何不建立一个没有 parent 的 branch？"></a>如何不建立一个没有 parent 的 branch？</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan newbranch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>此时 <code>git branch</code> 是不会显示该 branch 的，直到你做完更改首次 commit。比如你可能会想建立一个空的 gh-pages branch，那么：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git checkout --orphan gh-pages</span><br><span class="line">git rm -rf .</span><br><span class="line">// add your gh-pages branch files</span><br><span class="line">git add .</span><br><span class="line">git commit -m "init commit"</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="submodule-的常用命令"><a href="#submodule-的常用命令" class="headerlink" title="submodule 的常用命令"></a>submodule 的常用命令</h3><p><strong>添加 submodule</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add git@github.com:philsquared/Catch.git Catch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这会在仓库根目录下生成如下 .gitmodules 文件并 clone 该 submodule 到本地。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[submodule "Catch"]</span><br><span class="line">path = Catch</span><br><span class="line">url = git@github.com:philsquared/Catch.git</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>更新 submodule</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update</span><br></pre></td></tr></tbody></table></figure>
+
+<p>当 submodule 的 remote 有更新的时候，需要</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --remote</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>删除 submodule</strong></p>
+<p>在 .gitmodules 中删除对应 submodule 的信息，然后使用如下命令删除子模块所有文件：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm --cached Catch</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>clone 仓库时拉取 submodule</strong></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule update --init --recursive</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="删除远程-tag"><a href="#删除远程-tag" class="headerlink" title="删除远程 tag"></a>删除远程 tag</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -d v0.0.9</span><br><span class="line">git push origin :refs/tags/v0.0.9</span><br></pre></td></tr></tbody></table></figure>
+
+<p>或</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --delete tag [tagname]</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="清除未跟踪文件"><a href="#清除未跟踪文件" class="headerlink" title="清除未跟踪文件"></a>清除未跟踪文件</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clean</span><br></pre></td></tr></tbody></table></figure>
+
+<p>可选项：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-q, –quiet</td>
+<td>不显示删除文件名称</td>
+</tr>
+<tr>
+<td>-n, –dry-run</td>
+<td>试运行</td>
+</tr>
+<tr>
+<td>-f, –force</td>
+<td>强制删除</td>
+</tr>
+<tr>
+<td>-i, –interactive</td>
+<td>交互式删除</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>删除文件夹</td>
+</tr>
+<tr>
+<td>-e, –exclude <pattern></pattern></td>
+<td>忽略符合 <pattern> 的文件</pattern></td>
+</tr>
+<tr>
+<td>-x</td>
+<td>清除包括 .gitignore 里忽略的文件</td>
+</tr>
+<tr>
+<td>-X</td>
+<td>只清除 .gitignore 里忽略的文件</td>
+</tr>
+</tbody></table>
+<h3 id="忽略文件属性更改"><a href="#忽略文件属性更改" class="headerlink" title="忽略文件属性更改"></a>忽略文件属性更改</h3><p>因为临时需求对某个文件 chmod 了一下，结果这个就被记为了更改，有时候这是想要的，有时候这会造成困扰。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.filemode false</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考：<a href="http://stackoverflow.com/questions/1580596/how-do-i-make-git-ignore-file-mode-chmod-changes" target="_blank" rel="noopener">How do I make Git ignore file mode (chmod) changes?</a></p>
+<h3 id="patch"><a href="#patch" class="headerlink" title="patch"></a>patch</h3><p>将未添加到暂存区的更改生成 patch 文件：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff > demo.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>将已添加到暂存区的更改生成 patch 文件：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached > demo.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>合并上面两条命令生成的 patch 文件包含的更改：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git apply demo.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>将从 HEAD 之前的 3 次 commit 生成 3 个 patch 文件：</p>
+<p>（HEAD 可以换成 sha1 码）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch -3 HEAD</span><br></pre></td></tr></tbody></table></figure>
+
+<p>生成 af8e2 与 eaf8e 之间的 commits 的 patch 文件：</p>
+<p>（注意 af8e2 比 eaf8e 早）</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git format-patch af8e2..eaf8e</span><br></pre></td></tr></tbody></table></figure>
+
+<p>合并 format-patch 命令生成的 patch 文件：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git am 0001-Update.patch</span><br></pre></td></tr></tbody></table></figure>
+
+<p>与 <code>git apply</code> 不同，这会直接 add 和 commit。</p>
+<h3 id="只下载最新代码"><a href="#只下载最新代码" class="headerlink" title="只下载最新代码"></a>只下载最新代码</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone --depth 1 git://xxxxxx</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这样 clone 出来的仓库会是一个 shallow 的状态，要让它变成一个完整的版本：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch --unshallow</span><br></pre></td></tr></tbody></table></figure>
+
+<p>或</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull --unshallow</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="基于某次-commit-创建分支"><a href="#基于某次-commit-创建分支" class="headerlink" title="基于某次 commit 创建分支"></a>基于某次 commit 创建分支</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b <span class="built_in">test</span> 5234ab</span><br></pre></td></tr></tbody></table></figure>
+
+<p>表示以 commit hash 为 <code>5234ab</code> 的代码为基础创建分支 <code>test</code>。</p>
+<h3 id="恢复单个文件到指定版本"><a href="#恢复单个文件到指定版本" class="headerlink" title="恢复单个文件到指定版本"></a>恢复单个文件到指定版本</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset 5234ab MainActivity.java</span><br></pre></td></tr></tbody></table></figure>
+
+<p>恢复 MainActivity.java 文件到 commit hash 为 <code>5234ab</code> 时的状态。</p>
+<h3 id="设置全局-hooks"><a href="#设置全局-hooks" class="headerlink" title="设置全局 hooks"></a>设置全局 hooks</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.hooksPath C:/Users/mazhuang/git-hooks</span><br></pre></td></tr></tbody></table></figure>
+
+<p>然后把对应的 hooks 文件放在最后一个参数指定的目录即可。</p>
+<p>比如想要设置在 commit 之前如果检测到没有从服务器同步则不允许 commit，那在以上目录下建立文件 pre-commit，内容如下：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line">CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)</span><br><span class="line"></span><br><span class="line">git fetch origin <span class="variable">$CURRENT_BRANCH</span></span><br><span class="line"></span><br><span class="line">HEAD=$(git rev-parse HEAD)</span><br><span class="line">FETCH_HEAD=$(git rev-parse FETCH_HEAD)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$FETCH_HEAD</span>"</span> = <span class="string">"<span class="variable">$HEAD</span>"</span> ];</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"Pre-commit check passed"</span></span><br><span class="line">    <span class="built_in">exit</span> 0</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">"Error: you need to update from remote first"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span> 1</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="查看某次-commit-的修改内容"><a href="#查看某次-commit-的修改内容" class="headerlink" title="查看某次 commit 的修改内容"></a>查看某次 commit 的修改内容</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git show <commit-hash-id></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="查看某个文件的修改历史"><a href="#查看某个文件的修改历史" class="headerlink" title="查看某个文件的修改历史"></a>查看某个文件的修改历史</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p <filename></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="查看最近两次的修改内容"><a href="#查看最近两次的修改内容" class="headerlink" title="查看最近两次的修改内容"></a>查看最近两次的修改内容</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p -2</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="应用已存在的某次更改-merge-某一个-commit"><a href="#应用已存在的某次更改-merge-某一个-commit" class="headerlink" title="应用已存在的某次更改 / merge 某一个 commit"></a>应用已存在的某次更改 / merge 某一个 commit</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick <commit-hash-id></span><br></pre></td></tr></tbody></table></figure>
+
+<p>cherry-pick 有更多详细的用法，可以参见帮助文档。</p>
+<h3 id="命令行自动补全"><a href="#命令行自动补全" class="headerlink" title="命令行自动补全"></a>命令行自动补全</h3><p>在 shell 里加载 git-completion 系列脚本，详见 <a href="https://github.com/git/git/tree/master/contrib/completion" target="_blank" rel="noopener">https://github.com/git/git/tree/master/contrib/completion</a></p>
+<h3 id="文件每一行变更明细"><a href="#文件每一行变更明细" class="headerlink" title="文件每一行变更明细"></a>文件每一行变更明细</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git blame <filename></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="找回曾经的历史"><a href="#找回曾经的历史" class="headerlink" title="找回曾经的历史"></a>找回曾经的历史</h3><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reflog</span><br></pre></td></tr></tbody></table></figure>
+
+<p>列出 HEAD 曾指向过的一系列 commit，它们只存在于本机，不是版本仓库的一部分。</p>
+<p>还有：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fsck</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="记住-http-s-方式的用户名密码"><a href="#记住-http-s-方式的用户名密码" class="headerlink" title="记住 http(s) 方式的用户名密码"></a>记住 http(s) 方式的用户名密码</h3><p>在有些情况下无法使用 git 协议，比如公司的 git 服务器设置了 IP 白名单，只能在公司内网使用 ssh，那么在外面就只能使用 http(s) 上传下载源码了，但每次都手动输入用户名/密码特别惨，于是乎就记住吧。</p>
+<p>设置记住密码（默认 15 分钟）：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper cache</span><br></pre></td></tr></tbody></table></figure>
+
+<p>自定义记住的时间（如下面是一小时）：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config credential.helper <span class="string">'cache --timeout=3600'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>长期存储密码：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="git-commit-使用-vim-编辑-commit-message-中文乱码"><a href="#git-commit-使用-vim-编辑-commit-message-中文乱码" class="headerlink" title="git commit 使用 vim 编辑 commit message 中文乱码"></a>git commit 使用 vim 编辑 commit message 中文乱码</h3><p>这个问题在 Windows 下出现了，没找到能完美解决的办法，一种方法是在 vim 打开后输入：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">set</span> termencoding=GBK</span><br></pre></td></tr></tbody></table></figure>
+
+<p>这就有点太麻烦了，折衷的方法是改为使用 gVim 或其它你喜欢的编辑器来编辑 commit message：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.editor gvim</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考：</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/2596805/how-do-i-make-git-use-the-editor-of-my-choice-for-commits" target="_blank" rel="noopener">How do I make Git use the editor of my choice for commits?</a></li>
+<li><a href="http://www.cnblogs.com/youxin/p/3227961.html" target="_blank" rel="noopener">转：git windows中文 乱码问题解决汇总</a></li>
+</ul>
+<h3 id="git-log-中文乱码"><a href="#git-log-中文乱码" class="headerlink" title="git log 中文乱码"></a>git log 中文乱码</h3><p>只在 Windows 下遇到。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global i18n.logoutputencoding gbk</span><br></pre></td></tr></tbody></table></figure>
+
+<p>编辑 git 安装目录下 etc/profile 文件，在最后添加如下内容：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LESSCHARSET=utf-8</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考：<a href="https://segmentfault.com/a/1190000000578037" target="_blank" rel="noopener">Git for windows 中文乱码解决方案</a></p>
+<h3 id="git-diff-中文乱码"><a href="#git-diff-中文乱码" class="headerlink" title="git diff 中文乱码"></a>git diff 中文乱码</h3><p>只在 Windows 下遇到，目前尚未找到有效办法。</p>
+<h3 id="统计代码行数"><a href="#统计代码行数" class="headerlink" title="统计代码行数"></a>统计代码行数</h3><p>CMD 下直接执行可能失败，可以在右键，Git Bash here 里执行。</p>
+<h4 id="统计某人的代码提交量"><a href="#统计某人的代码提交量" class="headerlink" title="统计某人的代码提交量"></a>统计某人的代码提交量</h4><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --author=<span class="string">"<span class="variable">$(git config --get user.name)</span>"</span> --pretty=tformat: --numstat | gawk <span class="string">'{ add += $1 ; subs += $2 ; loc += $1 - $2 } END { printf "added lines: %s removed lines : %s total lines: %s\n",add,subs,loc }'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="仓库提交都排名前-5"><a href="#仓库提交都排名前-5" class="headerlink" title="仓库提交都排名前 5"></a>仓库提交都排名前 5</h4><p>如果看全部，去掉 head 管道即可。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=<span class="string">'%aN'</span> | sort | uniq -c | sort -k1 -n -r | head -n 5</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="仓库提交者（邮箱）排名前-5"><a href="#仓库提交者（邮箱）排名前-5" class="headerlink" title="仓库提交者（邮箱）排名前 5"></a>仓库提交者（邮箱）排名前 5</h4><p>这个统计可能不太准，可能有同名。</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=format:%ae | gawk -- <span class="string">'{ ++c[$0]; } END { for(cc in c) printf "%5d %s\n",c[cc],cc; }'</span> | sort -u -n -r | head -n 5</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="贡献者排名"><a href="#贡献者排名" class="headerlink" title="贡献者排名"></a>贡献者排名</h4><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --pretty=<span class="string">'%aN'</span> | sort -u | wc -l</span><br></pre></td></tr></tbody></table></figure>
+
+<h4 id="提交数统计"><a href="#提交数统计" class="headerlink" title="提交数统计"></a>提交数统计</h4><figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline | wc -l</span><br></pre></td></tr></tbody></table></figure>
+
+<p>参考：<a href="http://blog.csdn.net/Dwarven/article/details/46550117" target="_blank" rel="noopener">Git代码行统计命令集</a></p>
+<h3 id="修改文件名时的大小写问题"><a href="#修改文件名时的大小写问题" class="headerlink" title="修改文件名时的大小写问题"></a>修改文件名时的大小写问题</h3><p>修改文件名大小写时，默认会被忽略（在 Windows 下是这样），让 git 对大小写敏感的方法：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>或者使用 <code>git mv oldname newname</code> 也是可以的。</p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="../../../../tags/github/" rel="tag"># github</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="C++手册" href="../Cpp-plus/">
+            ← C++手册
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="Leetcode#53 最大子序和" href="../LeetCode-53/">
+            Leetcode#53 最大子序和 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用命令"><span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Q-amp-A"><span class="toc-text">Q&A</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#如何解决gitk中文乱码，git-ls-files-中文文件名乱码问题？"><span class="toc-text">如何解决gitk中文乱码，git ls-files 中文文件名乱码问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何处理本地有更改需要从服务器合入新代码的情况？"><span class="toc-text">如何处理本地有更改需要从服务器合入新代码的情况？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stash"><span class="toc-text">stash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何合并-fork-的仓库的上游更新？"><span class="toc-text">如何合并 fork 的仓库的上游更新？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何通过-TortoiseSVN-带的-TortoiseMerge-exe-处理-git-产生的-conflict？"><span class="toc-text">如何通过 TortoiseSVN 带的 TortoiseMerge.exe 处理 git 产生的 conflict？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？"><span class="toc-text">不想跟踪的文件已经被提交了，如何不再跟踪而保留本地文件？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何不建立一个没有-parent-的-branch？"><span class="toc-text">如何不建立一个没有 parent 的 branch？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#submodule-的常用命令"><span class="toc-text">submodule 的常用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除远程-tag"><span class="toc-text">删除远程 tag</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#清除未跟踪文件"><span class="toc-text">清除未跟踪文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#忽略文件属性更改"><span class="toc-text">忽略文件属性更改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#patch"><span class="toc-text">patch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#只下载最新代码"><span class="toc-text">只下载最新代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于某次-commit-创建分支"><span class="toc-text">基于某次 commit 创建分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#恢复单个文件到指定版本"><span class="toc-text">恢复单个文件到指定版本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置全局-hooks"><span class="toc-text">设置全局 hooks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看某次-commit-的修改内容"><span class="toc-text">查看某次 commit 的修改内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看某个文件的修改历史"><span class="toc-text">查看某个文件的修改历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查看最近两次的修改内容"><span class="toc-text">查看最近两次的修改内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用已存在的某次更改-merge-某一个-commit"><span class="toc-text">应用已存在的某次更改 / merge 某一个 commit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#命令行自动补全"><span class="toc-text">命令行自动补全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件每一行变更明细"><span class="toc-text">文件每一行变更明细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#找回曾经的历史"><span class="toc-text">找回曾经的历史</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#记住-http-s-方式的用户名密码"><span class="toc-text">记住 http(s) 方式的用户名密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-commit-使用-vim-编辑-commit-message-中文乱码"><span class="toc-text">git commit 使用 vim 编辑 commit message 中文乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-log-中文乱码"><span class="toc-text">git log 中文乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-diff-中文乱码"><span class="toc-text">git diff 中文乱码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#统计代码行数"><span class="toc-text">统计代码行数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#统计某人的代码提交量"><span class="toc-text">统计某人的代码提交量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库提交都排名前-5"><span class="toc-text">仓库提交都排名前 5</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#仓库提交者（邮箱）排名前-5"><span class="toc-text">仓库提交者（邮箱）排名前 5</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#贡献者排名"><span class="toc-text">贡献者排名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#提交数统计"><span class="toc-text">提交数统计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改文件名时的大小写问题"><span class="toc-text">修改文件名时的大小写问题</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">— X LAB —</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="../../../02/17/leetcode-354/">Leetcode#354 俄罗斯套娃信封问题</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="../../../02/13/leetcode-143/">Leetcode#143 环状链表II</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="../../../02/06/leetcode-15/">Leetcode#15 三数之和</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="../../../../archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+    <header class="read-next-card-header tagcloud-card">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/Github/">Github</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/c/">c++</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/">智能算法</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a></li></ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+	<header class="read-next-card-header tagcloud-card">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="../../../../tags/IJCAI/" style="font-size: 14px;">IJCAI</a> <a href="../../../../tags/c/" style="font-size: 14px;">c++</a> <a href="../../../../tags/github/" style="font-size: 17.33px;">github</a> <a href="../../../../tags/instance-segmentation/" style="font-size: 14px;">instance segmentation</a> <a href="../../../../tags/leetcode/" style="font-size: 24px;">leetcode</a> <a href="../../../../tags/python/" style="font-size: 17.33px;">python</a> <a href="../../../../tags/segmentation/" style="font-size: 14px;">segmentation</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E9%9B%86/" style="font-size: 14px;">数据集</a> <a href="../../../../tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">机器学习</a> <a href="../../../../tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 14px;">机器视觉</a> <a href="../../../../tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20.67px;">深度学习</a> <a href="../../../../tags/%E8%AF%BE%E4%BB%B6/" style="font-size: 14px;">课件</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="X LAB">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="X LAB">X LAB © 2021</a>
+			
+				
+			        <span hidden="true" id class="leancloud-visitors" data-flag-title="Git使用手册">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<center><span id="sitetime"></span></center>
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <center><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></center>
+		<nav class="site-footer-nav">
+			
+			<a href="../../../../https:/hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="../../../../https:/github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+
+ 
+</footer>
+
+
+<script language="javascript">
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 01, 20, 17, 11, 00); //建站时间  北京时间2020-1-20 17:11:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="../../../../js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+            var bLazy = new Blazy();
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css">
+
+
+<script src="../../../../photoswipe/photoswipe.min.js"></script>
+
+
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: false,
+            appId: 'fKmrEqkb5kckIL85TLUlT7xx-gzGzoHsz',
+            appKey: 'D4VdKV6P7ul5dvX9u3SAmLDn',
+            placeholder: 'Just go go',
+            pageSize: 10,
+            avatar: 'mm',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+
+
+</body></html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="preconnect" href="//www.googletagmanager.com">
+	<link rel="preconnect" href="//zz.bdstatic.com">
+	<link rel="preconnect" href="//sp0.baidu.com">
+	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="//cdn1.lncld.net">
+	<link rel="preconnect" href="//unpkg.com">
+	<link rel="preconnect" href="//app-router.leancloud.cn">
+	<link rel="preconnect" href="//9qpuwspm.api.lncld.net">
+	<link rel="preconnect" href="//gravatar.loli.net">
+
+	<title>镜头相关名词参数 | X LAB</title>
+
+	<meta name="HandheldFriendly" content="True">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+	<meta name="generator" content="hexo">
+	<meta name="author" content="Karl Xing">
+	<meta name="description" content="镜头相关参数说明">
+
+	
+	<meta name="keywords" content="机器视觉, 手册">
+	
+
+	
+	<link rel="shortcut icon" href="../../../../https:/i.loli.net/2017/11/26/5a19c0b50432e.png">
+	<link rel="apple-touch-icon" href="https://i.loli.net/2017/11/26/5a19c0b50432e.png">
+	
+
+	
+	<meta name="theme-color" content="#3c484e">
+	<meta name="msapplication-TileColor" content="#3c484e">
+	
+
+	
+
+	
+
+	<meta property="og:site_name" content="X LAB">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="镜头相关名词参数 | X LAB">
+	<meta property="og:description" content="镜头相关参数说明">
+	<meta property="og:url" content="http://yoursite.com">
+
+	
+	<meta property="article:published_time" content="2020-01-20T19:01:00+08:00"> 
+	<meta property="article:author" content="Karl Xing">
+	<meta property="article:published_first" content="X LAB, ">
+	
+
+	
+	
+	
+<link rel="stylesheet" href="../../../../css/allinonecss.min.css">
+
+
+	
+	
+	
+</head>
+<body class="post-template">
+	<div class="site-wrapper">
+		
+
+
+
+
+<header class="site-header post-site-header outer">
+    <div class="inner">
+        
+<nav class="site-nav"> 
+    <div class="site-nav-left">
+        <ul class="nav">
+            <li>
+                
+                <a href="/" title="Home">HOME</a>
+                
+            </li>
+            
+            
+            <li>
+                <a href="https://github.com/DeepTrial" target="_blank" rel="noopener" title="ABOUT">ABOUT</a>
+            </li>
+            
+            <li>
+                <a href="/archives" title="ARCHIVES">ARCHIVES</a>
+            </li>
+            
+            
+        </ul> 
+    </div>
+    
+    <div class="search-button-area">
+        <a href="#search" class="search-button">Search ...</a>
+    </div>
+     
+    <div class="site-nav-right">
+        
+        <a href="#search" class="search-button">Search ...</a>
+         
+        
+<div class="social-links">
+    
+    <a class="social-link" title="weibo" href="https://weibo.com/p/1005055590700588/home?from=page_100505&mod=TAB#place" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1141 1024" xmlns="http://www.w3.org/2000/svg"><path d="M916.48 518.144q27.648 21.504 38.912 51.712t9.216 62.976-14.336 65.536-31.744 59.392q-34.816 48.128-78.848 81.92t-91.136 56.32-94.72 35.328-89.6 18.944-75.264 7.68-51.712 1.536-49.152-2.56-68.096-10.24-78.336-21.504-79.872-36.352-74.24-55.296-59.904-78.848q-16.384-29.696-22.016-63.488t-5.632-86.016q0-22.528 7.68-51.2t27.136-63.488 53.248-75.776 86.016-90.112q51.2-48.128 105.984-85.504t117.248-57.856q28.672-10.24 63.488-11.264t57.344 11.264q10.24 11.264 19.456 23.04t12.288 29.184q3.072 14.336 0.512 27.648t-5.632 26.624-5.12 25.6 2.048 22.528q17.408 2.048 33.792-1.536t31.744-9.216 31.232-11.776 33.28-9.216q27.648-5.12 54.784-4.608t49.152 7.68 36.352 22.016 17.408 38.4q2.048 14.336-2.048 26.624t-8.704 23.04-7.168 22.016 1.536 23.552q3.072 7.168 14.848 13.312t27.136 12.288 32.256 13.312 29.184 16.384zM658.432 836.608q26.624-16.384 53.76-45.056t44.032-64 18.944-75.776-20.48-81.408q-19.456-33.792-47.616-57.344t-62.976-37.376-74.24-19.968-80.384-6.144q-78.848 0-139.776 16.384t-105.472 43.008-72.192 60.416-38.912 68.608q-11.264 33.792-6.656 67.072t20.992 62.976 42.496 53.248 57.856 37.888q58.368 25.6 119.296 32.256t116.224 0.512 100.864-21.504 74.24-33.792zM524.288 513.024q20.48 8.192 38.912 18.432t32.768 27.648q10.24 12.288 17.92 30.72t10.752 39.424 1.536 42.496-9.728 38.912q-8.192 18.432-19.968 37.376t-28.672 35.328-40.448 29.184-57.344 18.944q-61.44 11.264-117.76-11.264t-88.064-74.752q-12.288-39.936-13.312-70.656t16.384-66.56q13.312-27.648 40.448-51.712t62.464-38.912 75.264-17.408 78.848 12.8zM361.472 764.928q37.888 3.072 57.856-18.432t21.504-48.128-15.36-47.616-52.736-16.896q-27.648 3.072-43.008 23.552t-17.408 43.52 9.728 42.496 39.424 21.504zM780.288 6.144q74.752 0 139.776 19.968t113.664 57.856 76.288 92.16 27.648 122.88q0 33.792-16.384 50.688t-35.328 17.408-35.328-14.336-16.384-45.568q0-40.96-22.528-77.824t-59.392-64.512-84.48-43.52-96.768-15.872q-31.744 0-47.104-15.36t-14.336-34.304 18.944-34.304 51.712-15.36zM780.288 169.984q95.232 0 144.384 48.64t49.152 146.944q0 30.72-10.24 43.52t-22.528 11.264-22.528-14.848-10.24-35.84q0-60.416-34.816-96.256t-93.184-35.84q-19.456 0-28.672-10.752t-9.216-23.04 9.728-23.04 28.16-10.752z"/></svg>
+    </a>
+    
+    
+    <a class="social-link" title="github" href="https://github.com/deeptrial" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1049 1024" xmlns="http://www.w3.org/2000/svg"><path d="M524.979332 0C234.676191 0 0 234.676191 0 524.979332c0 232.068678 150.366597 428.501342 358.967656 498.035028 26.075132 5.215026 35.636014-11.299224 35.636014-25.205961 0-12.168395-0.869171-53.888607-0.869171-97.347161-146.020741 31.290159-176.441729-62.580318-176.441729-62.580318-23.467619-60.841976-58.234462-76.487055-58.234463-76.487055-47.804409-32.15933 3.476684-32.15933 3.476685-32.15933 53.019436 3.476684 80.83291 53.888607 80.83291 53.888607 46.935238 79.963739 122.553122 57.365291 152.97411 43.458554 4.345855-33.897672 18.252593-57.365291 33.028501-70.402857-116.468925-12.168395-239.022047-57.365291-239.022047-259.012982 0-57.365291 20.860106-104.300529 53.888607-140.805715-5.215026-13.037566-23.467619-66.926173 5.215027-139.067372 0 0 44.327725-13.906737 144.282399 53.888607 41.720212-11.299224 86.917108-17.383422 131.244833-17.383422s89.524621 6.084198 131.244833 17.383422C756.178839 203.386032 800.506564 217.29277 800.506564 217.29277c28.682646 72.1412 10.430053 126.029806 5.215026 139.067372 33.897672 36.505185 53.888607 83.440424 53.888607 140.805715 0 201.64769-122.553122 245.975415-239.891218 259.012982 19.121764 16.514251 35.636014 47.804409 35.636015 97.347161 0 70.402857-0.869171 126.898978-0.869172 144.282399 0 13.906737 9.560882 30.420988 35.636015 25.205961 208.601059-69.533686 358.967656-265.96635 358.967655-498.035028C1049.958663 234.676191 814.413301 0 524.979332 0z"/></svg>
+    </a>
+    
+    
+    
+    
+    
+    <a class="social-link" title="bilibili" href="https://space.bilibili.com/7441194" target="_blank" rel="noopener">
+        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M360.896 183.968l-90.912-88.096s-14.208-17.472 9.824-37.248c24.16-19.648 25.376-10.912 33.504-5.472s135.2 130.816 135.2 130.816zm301.952 3.264l90.912-88.096s14.208-17.472-9.824-37.248c-24.032-19.648-25.376-10.912-33.504-5.472s-135.2 130.816-135.2 130.816zM1004 350.336c-3.264-137.984-123.168-164.192-123.168-164.192s-614.336-4.96-742.496 0C10.176 222.304 20 350.336 20 350.336s1.696 274.272-.128 413.12c13.824 138.848 120.864 160.928 120.864 160.928s42.72.864 73.92.864c3.264 8.992 5.696 52.544 54.24 52.544 48.416 0 54.24-52.544 54.24-52.544s354.88-1.696 384.352-1.696c1.696 14.816 8.992 54.976 57.536 54.24 48.416-.864 51.712-57.536 51.712-57.536s16.384-1.696 65.664 0C997.344 898.88 1004 764.192 1004 764.192s-1.568-275.872 0-413.856zm-98.912 439.232c0 21.728-17.248 39.456-38.464 39.456H167.2c-21.248 0-38.464-17.6-38.464-39.456V326.336c0-21.728 17.248-39.456 38.464-39.456h699.424c21.248 0 38.464 17.6 38.464 39.456zM202.4 457.152l205.344-39.456 15.52 77.184-203.648 39.456zm638.976 0l-205.344-39.456-15.648 77.184 203.776 39.456zm-418.08 191.392s45.152 81.312 95.264-26.336c48.416 105.088 101.824 27.904 101.824 27.904l30.336 19.776s-56.672 91.136-131.424 22.208c-63.232 68.928-129.728-21.952-129.728-21.952z"/></svg>
+    </a>
+    
+    
+</div>
+    </div>
+</nav>
+    </div>
+</header>
+
+
+<div id="site-main" class="site-main outer" role="main">
+    <div class="inner">
+        <header class="post-full-header">
+            <div class="post-full-meta">
+                <time class="post-full-meta-date" datetime="2020-01-20T11:42:28.000Z">
+                    2020-01-20
+                </time>
+                
+                <span class="date-divider">/</span>
+                
+                <a href="../../../../categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a>  
+                
+                
+            </div>
+            <h1 class="post-full-title">镜头相关名词参数</h1>
+        </header>
+        <div class="post-full no-image">
+            
+            <div class="post-full-content">
+                <article id="photoswipe" class="markdown-body">
+                    <h1 id="镜头-lens-参数"><a href="#镜头-lens-参数" class="headerlink" title="镜头(lens)参数"></a>镜头(lens)参数</h1><h2 id="焦距-focus"><a href="#焦距-focus" class="headerlink" title="焦距(focus)"></a>焦距(focus)</h2><p>镜头的焦距是镜头的一个非常重要的指标。镜头焦距的长短决定了被摄物在成像介质（胶片或CCD等）上成像的大小，也就是相当于物和象的比例尺。当对同一距离的同一个被摄目标拍摄时，镜头焦距长的所成的象大，镜头焦距短的所成的象小。根据用途的不同，照相机镜头的焦距相差非常大，有短到几毫米，十几毫米的，也有长达几米的。</p>
+<p>镜头的焦距分为像方焦距和物方焦距。像方焦距是像方主面到象方焦点的距离，同样，物方焦距就是物方主面到物方焦点的距离。必须注意，由于照相机镜头设计，特别是变焦距镜头中广泛采用了望远镜结构，物方焦距与像方焦距是不一定相等的。我们平时说的照相机镜头的焦距是指像方焦距。</p>
+<p>焦距通常会清晰显示在镜头上，一般以毫米(mm)表示，定焦镜头只会有一组数字 (如 50mm)，而变焦镜头则会有两组 (如 18-55mm)，说明该支镜头的变焦段(zoom range)。在实际拍摄上，不同的焦距会影响物体在你照片里放到有多大，焦距愈长，物件就放得越大，视角越狭窄，而压缩感较强，景深则越浅。</p>
+<p><img alt class="post-img b-lazy" data-img="https://i.imgur.com/QwB2tpe.jpg" data-index="0" data-src="https://i.imgur.com/QwB2tpe.jpg"></p>
+<p>以上的变焦镜头焦距为35mm-70mm</p>
+<p>下图展示了焦距与视角的关系。</p>
+<p><img alt class="post-img b-lazy" data-img="https://i.imgur.com/WPclptZ.jpg" data-index="1" data-src="https://i.imgur.com/WPclptZ.jpg"></p>
+<h3 id="超广角镜头与广角镜头"><a href="#超广角镜头与广角镜头" class="headerlink" title="超广角镜头与广角镜头"></a>超广角镜头与广角镜头</h3><p>一般情况下的拍摄用途，少于21mm超广角镜(Ultra wide angle mirror)，用来拍摄广阔风景，21-35mm 广角镜，用来拍摄一般风景</p>
+<h3 id="定焦镜头与变焦镜头"><a href="#定焦镜头与变焦镜头" class="headerlink" title="定焦镜头与变焦镜头"></a>定焦镜头与变焦镜头</h3><p>大多数视觉系统的工作距离和放大倍数是不变的，因此镜头焦距也是固定的，这样的镜头是定焦镜头，但部分系统需要在工作距离变化后保持放大倍数稳定，或者在工作距离不变的情况下获得不同的放大倍数，这样我们需要选用变焦镜头。</p>
+<h3 id="标准工业镜头"><a href="#标准工业镜头" class="headerlink" title="标准工业镜头"></a>标准工业镜头</h3><p>对于一般的工业测量、缺陷检测或者定位等，对物体成像的放大倍率没有严格要求，只要选用畸变小的镜头，就可以满足要求</p>
+<h3 id="远心镜头"><a href="#远心镜头" class="headerlink" title="远心镜头"></a>远心镜头</h3><p>对于精密测量的系统，需要选用远心镜头，它的特点是：物体在景深范围内移动，光学放大倍数不变，这就避免了测试过程中工作距离的轻微改变导致系统放大倍数的变化，保证了系统规定测量精度.</p>
+<h2 id="靶面"><a href="#靶面" class="headerlink" title="靶面"></a>靶面</h2><p>CCD指的是摄像机里的图像传感器，这个设备是用来把通过镜头进来的图像转化为电子信号.<br>CCD靶面尺寸说的就是这个图像传感器的感光部分的大小。一般用英寸来表示，和电视机一样，通常这个数据指的是这个图像传感器的对角长度。常见的靶面有6.35mm (1/4in), 8.47mm (1/3in), 12.7mm (1/2in), 16.9mm (2/3in ),25.4mm (1in)等几种.。这个尺寸的变小只是表示这方面技术也在不断的进步。并不是说1/4英寸就一定比1/3英寸的好，因为不同的场合需要用到一些不同的尺寸所独有的优点。比如1/2英寸可以有比较大的通光量，而1/4英寸可以比较容易的获得大的景深。</p>
+<h2 id="光圈"><a href="#光圈" class="headerlink" title="光圈"></a>光圈</h2><p>光圈像是一道闸门，用来控制镜头入光量， 曝光 时间一定时，光圈越大，光圈数值越小，入光量越多。另一方面大光圈易拍出浅景深，小光圈容易拍出深景深。 </p>
+<p>由于光圈值是以2的倍数变化的，直接用光圈数值表示镜头的通光量，在实际摄影中计算曝光值就会有不少困难。光圈值通常用AV（英文“Aperture Value”的缩写，即“光圈值”）根据圆形的面积与半径的平方值关系，可知为了达到倍数调整通光量的目的，光圈直径应呈√2（约等于1.4）系数关系递增</p>
+<p>光圈值（AV）与光圈数值（F）的对应关系见表。</p>
+<p>光圈值（AV）|0|1|2|3|4|5|6|7|8|9|10<br>光圈数值（F）|1|1.4|2|2.8|4|5.6|8|11|16|22|32</p>
+<p>光圈英文名称为Aperture，我们平时所说的光圈值F2.8、F8、F16等是光圈“系数”，是相对光圈，并非光圈的物理孔径，与光圈的物理孔径及镜头到感光器件（胶片或CCD或CMOS）的距离有关。</p>
+<p>表达光圈大小我们是用F值。光圈F值 = 镜头的焦距/镜头口径的直径，从以上的公式可知要达到相同的光圈F值，长焦距镜头的口径要比短焦距镜头的口径大。当光圈物理孔径不变时，镜头中心与感光器件距离愈远，F数愈大，反之，镜头中心与感光器件距离愈近，通过光孔到达感光器件的光密度愈高，F数就愈小。完整的光圈值系列如下： F1， F1.4， F2， F2.8， F4， F5.6， F8， F11， F16， F22， F32， F44， F64。</p>
+<p>这里值得一提的是光圈F值愈小，在同一单位时间内的进光量便愈多，而且上一级的进光量刚是下一级的一倍，例如光圈从F8调整到F5.6，进光量便多一倍，我们也说光圈开大了一级。多数非专业数码相机镜头的焦距短、物理口径很小，F8时光圈的物理孔径已经很小了，继续缩小就会发生衍射之类的光学现象，影响成像。所以一般非专业数码相机的最小光圈都在F8至F11，而专业型数码相机感光器件面积大，镜头距感光器件距离远，物理孔径可以很小，光圈值可以更大。对于消费型数码相机而言，光圈F值常常介于F2.8 - F16。此外许多数码相机在调整光圈时，可以做1/3级的调整。</p>
+<h2 id="景深"><a href="#景深" class="headerlink" title="景深"></a>景深</h2><p>在光学中，尤其是录影或是摄影，景深 (depth of field,DOF) 是一个描述在空间中，可以清楚成像的距离范围。<br>一般会影响到景深长短的原因，有下面三种：</p>
+<p>1.光圈越大、景深越短，光圈越小、景深越长<br>在拍摄距离不变的拍摄情况下，使用小光圈来拍摄时，因为景深变大，被摄体的前后景物清晰范围会变长。而使用大光圈时，被摄体前后景物清晰的范围就会变短。</p>
+<p>2.镜头的焦距越长、景深越短，镜头的焦距越短、景深越长<br>在光圈、快门都不变时，拍摄同一个场景，使用长镜头会让景深变浅。而使用广角镜时，景深就会变长。<br>左边使用长镜头，右边使用广角镜头，可以看出景深的差异。</p>
+<p>3.距离拍摄体越近时、景深越浅，距离拍摄体越远时、景深越长<br>在光圈、快门、镜头焦距都不变的情况下，拍摄同一场景，离被摄体越近时，景深就会越浅。离被摄体越远时，景深就会越长。<br>一只超广角镜头几乎在所有的光圈下都有极大的景深。一只长焦镜头即使再最小光圈的情况下，景深范围也会非常有限。</p>
+
+                </article>
+                <ul class="tags-postTags">
+                    
+                    <li>
+                        <a href="../../../../tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" rel="tag"># 机器视觉</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    
+    <nav id="gobottom" class="pagination">
+        
+        <a class="prev-post" title="Annotation-Free and One-Shot Learning for Instance Segmentation of Homogeneous Object Clusters" href="../HOC/">
+            ← Annotation-Free and One-Shot Learning for Instance Segmentation of Homogeneous Object Clusters
+        </a>
+        
+        <span class="prev-next-post">·</span>
+        
+        <a class="next-post" title="OpenCV-Python 手册" href="../opencv-python-api/">
+            OpenCV-Python 手册 →
+        </a>
+        
+    </nav>
+
+    
+    <div class="inner">
+        <div id="comment"></div>
+    </div>
+    
+</div>
+
+<div class="toc-bar">
+    <div class="toc-btn-bar">
+        <a href="#site-main" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M793.024 710.272a32 32 0 1 0 45.952-44.544l-310.304-320a32 32 0 0 0-46.4 0.48l-297.696 320a32 32 0 0 0 46.848 43.584l274.752-295.328 286.848 295.808z"/></svg>
+        </a>
+        <div class="toc-btn toc-switch">
+            <svg class="toc-open" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M779.776 480h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M779.776 672h-387.2a32 32 0 0 0 0 64h387.2a32 32 0 0 0 0-64M256 288a32 32 0 1 0 0 64 32 32 0 0 0 0-64M392.576 352h387.2a32 32 0 0 0 0-64h-387.2a32 32 0 0 0 0 64M256 480a32 32 0 1 0 0 64 32 32 0 0 0 0-64M256 672a32 32 0 1 0 0 64 32 32 0 0 0 0-64"/></svg>
+            <svg class="toc-close hide" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M512 960c-247.039484 0-448-200.960516-448-448S264.960516 64 512 64 960 264.960516 960 512 759.039484 960 512 960zM512 128.287273c-211.584464 0-383.712727 172.128262-383.712727 383.712727 0 211.551781 172.128262 383.712727 383.712727 383.712727 211.551781 0 383.712727-172.159226 383.712727-383.712727C895.712727 300.415536 723.551781 128.287273 512 128.287273z"/><path d="M557.05545 513.376159l138.367639-136.864185c12.576374-12.416396 12.672705-32.671738 0.25631-45.248112s-32.704421-12.672705-45.248112-0.25631l-138.560301 137.024163-136.447897-136.864185c-12.512727-12.512727-32.735385-12.576374-45.248112-0.063647-12.512727 12.480043-12.54369 32.735385-0.063647 45.248112l136.255235 136.671523-137.376804 135.904314c-12.576374 12.447359-12.672705 32.671738-0.25631 45.248112 6.271845 6.335493 14.496116 9.504099 22.751351 9.504099 8.12794 0 16.25588-3.103239 22.496761-9.247789l137.567746-136.064292 138.687596 139.136568c6.240882 6.271845 14.432469 9.407768 22.65674 9.407768 8.191587 0 16.352211-3.135923 22.591372-9.34412 12.512727-12.480043 12.54369-32.704421 0.063647-45.248112L557.05545 513.376159z"/></svg>
+        </div>
+        <a href="#gobottom" class="toc-btn">
+            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M231.424 346.208a32 32 0 0 0-46.848 43.584l297.696 320a32 32 0 0 0 46.4 0.48l310.304-320a32 32 0 1 0-45.952-44.544l-286.848 295.808-274.752-295.36z"/></svg>
+        </a>
+    </div>
+    <div class="toc-main">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#镜头-lens-参数"><span class="toc-text">镜头(lens)参数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#焦距-focus"><span class="toc-text">焦距(focus)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#超广角镜头与广角镜头"><span class="toc-text">超广角镜头与广角镜头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#定焦镜头与变焦镜头"><span class="toc-text">定焦镜头与变焦镜头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标准工业镜头"><span class="toc-text">标准工业镜头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#远心镜头"><span class="toc-text">远心镜头</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#靶面"><span class="toc-text">靶面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#光圈"><span class="toc-text">光圈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#景深"><span class="toc-text">景深</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+	</div>
+	
+
+
+<aside class="read-next outer">
+    <div class="inner">
+        <div class="read-next-feed">
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+  <header class="read-next-card-header">
+    <small class="read-next-card-header-sitetitle">— X LAB —</small>
+    <h3 class="read-next-card-header-title">最新文章</h3>
+  </header>
+  <div class="read-next-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/>
+    </svg>
+  </div>
+  <div class="read-next-card-content">
+    <ul>
+      
+      
+      
+      <li>
+        <a href="../../../02/17/leetcode-354/">Leetcode#354 俄罗斯套娃信封问题</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="../../../02/13/leetcode-143/">Leetcode#143 环状链表II</a>
+      </li>
+      
+      
+      
+      <li>
+        <a href="../../../02/06/leetcode-15/">Leetcode#15 三数之和</a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+  </div>
+  <footer class="read-next-card-footer">
+    <a href="../../../../archives">  MORE  → </a>
+  </footer>
+</article>
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+    <header class="read-next-card-header tagcloud-card">
+        <h3 class="read-next-card-header-title">分类</h3>
+    </header>
+    <div class="read-next-card-content">
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="../../../../categories/Github/">Github</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/c/">c++</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/leetcode/">leetcode</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%99%BA%E8%83%BD%E7%AE%97%E6%B3%95/">智能算法</a></li><li class="category-list-item"><a class="category-list-link" href="../../../../categories/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/">机器视觉</a></li></ul>
+    </div>
+</article>
+
+
+            
+            
+            
+
+<article class="read-next-card" style="background-image: url(https://res.cloudinary.com/dmqrfncz7/image/upload/v1579533584/v2-a5f259afafe16588905792af100e802e_r_sizkpp.jpg)">
+	<header class="read-next-card-header tagcloud-card">
+		<h3 class="read-next-card-header-title">标签云</h3>
+	</header>
+	<div class="read-next-card-content-ext">
+		<a href="../../../../tags/IJCAI/" style="font-size: 14px;">IJCAI</a> <a href="../../../../tags/c/" style="font-size: 14px;">c++</a> <a href="../../../../tags/github/" style="font-size: 17.33px;">github</a> <a href="../../../../tags/instance-segmentation/" style="font-size: 14px;">instance segmentation</a> <a href="../../../../tags/leetcode/" style="font-size: 24px;">leetcode</a> <a href="../../../../tags/python/" style="font-size: 17.33px;">python</a> <a href="../../../../tags/segmentation/" style="font-size: 14px;">segmentation</a> <a href="../../../../tags/%E6%95%B0%E6%8D%AE%E9%9B%86/" style="font-size: 14px;">数据集</a> <a href="../../../../tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" style="font-size: 14px;">机器学习</a> <a href="../../../../tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 14px;">机器视觉</a> <a href="../../../../tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" style="font-size: 20.67px;">深度学习</a> <a href="../../../../tags/%E8%AF%BE%E4%BB%B6/" style="font-size: 14px;">课件</a>
+	</div>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+	
+
+
+
+
+<div id="search" class="search-overlay">
+    <div class="search-form">
+        
+        <div class="search-overlay-logo">
+        	<img src="https://i.loli.net/2017/11/26/5a19c0b50432e.png" alt="X LAB">
+        </div>
+        
+        <input id="local-search-input" class="search-input" type="text" name="search" placeholder="搜索 ...">
+        <a class="search-overlay-close" href="#"></a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+<footer class="site-footer outer">
+	<div class="site-footer-content inner">
+		<div class="copyright">
+			<a href="/" title="X LAB">X LAB © 2021</a>
+			
+				
+			        <span hidden="true" id class="leancloud-visitors" data-flag-title="镜头相关名词参数">
+			            <span>阅读量 </span>
+			            <span class="leancloud-visitors-count">0</span>
+			        </span>
+	    		
+    		
+		</div>
+		<center><span id="sitetime"></span></center>
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <center><span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span></center>
+		<nav class="site-footer-nav">
+			
+			<a href="../../../../https:/hexo.io" title="Hexo" target="_blank" rel="noopener">Hexo</a>
+			<a href="../../../../https:/github.com/xzhih/hexo-theme-casper" title="Casper" target="_blank" rel="noopener">Casper</a>
+		</nav>
+	</div>
+
+ 
+</footer>
+
+
+<script language="javascript">
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 01, 20, 17, 11, 00); //建站时间  北京时间2020-1-20 17:11:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+
+	
+
+
+<script>
+    if(window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for(let registration of registrations) {
+                registration.unregister()
+            }
+        })
+    }
+</script>
+
+
+<script id="scriptLoad" src="../../../../js/allinone.min.js" async></script>
+
+
+<script>
+    document.getElementById('scriptLoad').addEventListener('load', function () {
+        
+        
+            var bLazy = new Blazy();
+        
+
+        
+        
+
+        
+        
+        
+            searchFunc("/");
+        
+        
+    })
+</script>
+
+
+
+
+<link rel="stylesheet" href="../../../../photoswipe/photoswipe.css">
+
+
+<link rel="stylesheet" href="../../../../photoswipe/default-skin/default-skin.css">
+
+
+<script src="../../../../photoswipe/photoswipe.min.js"></script>
+
+
+<script src="../../../../photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+
+
+
+<script id="valineScript" src="//unpkg.com/valine/dist/Valine.min.js" async></script>
+<script>
+    document.getElementById('valineScript').addEventListener("load", function() {
+        new Valine({
+            el: '#comment' ,
+            verify: false,
+            notify: false,
+            appId: 'fKmrEqkb5kckIL85TLUlT7xx-gzGzoHsz',
+            appKey: 'D4VdKV6P7ul5dvX9u3SAmLDn',
+            placeholder: 'Just go go',
+            pageSize: 10,
+            avatar: 'mm',
+            visitor: true
+        })
+    });
+</script>
+
+
+
+
+
+
+
+</body></html>
